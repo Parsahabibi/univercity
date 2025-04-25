@@ -24,6 +24,11 @@ module.exports = {
         },
         green:{
           main:'#99E142',
+          dark:'#98E041',
+        },
+        gray:{
+          main:'#E3E3E3',
+          dark:'#3C3C3C',
         }
       },
     },
