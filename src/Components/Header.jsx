@@ -12,7 +12,7 @@ const Header = ({ title, subTitle, image, active }) => {
                     <div className='w-[50px] h-[50px]'>
                         <img src='./assets/images/svg/logo_uni.svg' alt='لوگو' className='w-full h-full' />
                     </div>
-                    <div>
+                    <nav>
                         <ul className='flex items-center gap-[70px] relative'>
                             {menuItems.map((item, index) => (
                                 <li key={index} className='text-base xl:text-xl text-white relative'>
@@ -47,7 +47,7 @@ const Header = ({ title, subTitle, image, active }) => {
                                 </li>
                             ))}
                         </ul>
-                    </div>
+                    </nav>
                 </div>
 
                 <div className='w-4/5 mx-auto max-w-[1250px]'>

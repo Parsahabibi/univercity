@@ -1,6 +1,8 @@
 import React from 'react'
 import Header from '../Components/Header'
 import { navItemsData } from '../constant/navItem'
+import { course, courseData } from '../constant/course'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
     return (
@@ -26,13 +28,13 @@ const Home = () => {
                         <img src='./assets/images/svg/CE_logo.svg' alt='' className='w-full h-full' />
                     </div>
                 </div>
-                <div className='py-9 px-[88px] bg-gray-dark rounded-[22px] flex items-center justify-between'>
+                <div className='py-9 px-[88px] bg-gray-dark rounded-[22px] flex items-center justify-between !mb-[60px]'>
                     {
                         navItemsData.map(
                             (item, index) =>
                                 <div className='flex flex-col items-center justify-center'>
                                     <div className='w-[100px] h-[100px] rounded-[36px] bg-green-dark flex items-center justify-center mb-3'>
-                                        <img src={item.image} alt='' className='w-[70px] h-[70px]'/>
+                                        <img src={item.image} alt='' className='w-[70px] h-[70px]' />
                                     </div>
                                     <span className='text-lg lg:text-xl text-white '>{item.title}</span>
                                 </div>
@@ -40,8 +42,147 @@ const Home = () => {
                         )
                     }
                 </div>
-                <div></div>
-                <div></div>
+                <div className='px-[44px] py-8 bg-white rounded-md flex flex-col xl:flex-row items-center justify-between !mb-[60px]'>
+                    <h2 className='text-4xl xl:text-5xl text-black font-semibold mb-8 xl:mb-0'>دوره ها و کارگاه های آموزشی</h2>
+                    <div className='flex items-center flex-row-reverse gap-10'>
+                        {
+                            courseData.map(
+                                (item) =>
+                                    <div
+                                        key={item.id}
+                                        className="rounded-xl p-4 bg-cover bg-center w-[180px] h-[240px] flex flex-col items-start justify-start"
+                                        style={{
+                                            backgroundImage: item.bg_image ? `url(${item.bg_image})` : 'none',
+                                            backgroundColor: item.bg_image ? 'transparent' : item.bg_color,
+                                        }}
+                                    >
+                                        <div className='flex items-start justify-between w-full h-full'>
+                                            <span className='text-2xl text-black'>{item.title}</span>
+                                            <div className='w-[50px] h-[50px] flex items-center justify-center'>
+                                                <img src={item.icon} alt='' className='w-full h-full' />
+                                            </div>
+                                        </div>
+                                        <Link to={item.link}>
+                                            <div className='p-[10px] rounded border border-black flex items-center gap-3'>
+                                                <img src='./assets/images/icons/Arrow.svg' alt='' />
+                                                <span className='text-base text-black'>مشاهده</span>
+                                            </div>
+                                        </Link>
+                                    </div>
+                            )
+                        }
+                    </div>
+                </div>
+                <div className='px-[44px] py-8 bg-white rounded-md !mb-[60px]'>
+                    <h2 className='text-4xl xl:text-5xl text-black font-semibold mb-16'>اخبار و رویداد ها</h2>
+                    <div className="grid grid-cols-2 items-start justify-between gap-x-8 gap-y-12">
+                        <div className='p-6 bg-purple-main rounded-[22px] flex items-start justify-between gap-10 h-full relative'>
+                            <div className='lg:w-1/2 xl:w-3/4 flex flex-col justify-between h-full'>
+                                <div>
+                                    <h3 className='mb-4 text-white text-xl xl:text-2xl font-bold'>
+                                        {'دوره آموزشی برنامه نویسی بکند با محوریت زبان پایتون'}
+                                    </h3>
+                                    <span className='text-base text-white leading-6 block mb-3'>
+                                        {'انجمن علمی کامپیوتر دانشگاه بوعلی سینا با همکاری انجمن علمی مهندسی کامپیوتر دانشگاه بین‌المللی امام‌خمینی برگزار می‌کند:'}
+                                    </span>
+                                    <span className='text-base text-white leading-6 block'>
+                                        {'این دوره آموزش برای افرادی مناسب است که می‌خواهند وارد دنیای توسعه وب شوند. اگر به دنبال ارتقاء مهارت‌های خود در زمینه توسعه وب هستید، این دوره بهترین انتخاب برای شماست.'}
+                                    </span>
+                                </div>
+                                <div className='flex justify-start items-end pt-6'>
+                                    <Link to={''}>
+                                        <div className='py-3 px-12 border border-green-dark flex items-center justify-center max-w-[160px] max-h-[50px] rounded-2xl'>
+                                            <span className='text-xl text-green-dark'>بیشتر</span>
+                                        </div>
+                                    </Link>
+                                </div>
+                            </div>
+
+                            <div className='lg:w-1/2 2xl:w-1/4 h-full'>
+                                <img src='./assets/images/banner.png' alt='' className='w-full h-full' />
+                            </div>
+                        </div>
+                        <div className='p-6 bg-purple-main rounded-[22px] flex items-start justify-between gap-10 h-full relative'>
+                            <div className='lg:w-1/2 xl:w-3/4 flex flex-col justify-between h-full'>
+                                <div>
+                                    <h3 className='mb-4 text-white text-xl xl:text-2xl font-bold'>
+                                        {'دوره آموزشی برنامه نویسی بکند با محوریت زبان پایتون'}
+                                    </h3>
+                                    <span className='text-base text-white leading-6 block mb-3'>
+                                        {'انجمن علمی کامپیوتر دانشگاه بوعلی سینا با همکاری انجمن علمی مهندسی کامپیوتر دانشگاه بین‌المللی امام‌خمینی برگزار می‌کند:'}
+                                    </span>
+                                    <span className='text-base text-white leading-6 block'>
+                                        {'این دوره آموزش برای افرادی مناسب است که می‌خواهند وارد دنیای توسعه وب شوند. اگر به دنبال ارتقاء مهارت‌های خود در زمینه توسعه وب هستید، این دوره بهترین انتخاب برای شماست.'}
+                                    </span>
+                                </div>
+                                <div className='flex justify-start items-end pt-6'>
+                                    <Link to={''}>
+                                        <div className='py-3 px-12 border border-green-dark flex items-center justify-center max-w-[160px] max-h-[50px] rounded-2xl'>
+                                            <span className='text-xl text-green-dark'>بیشتر</span>
+                                        </div>
+                                    </Link>
+                                </div>
+                            </div>
+
+                            <div className='lg:w-1/2 2xl:w-1/4 h-full'>
+                                <img src='./assets/images/banner.png' alt='' className='w-full h-full' />
+                            </div>
+                        </div>
+                        <div className='p-6 bg-purple-main rounded-[22px] flex items-start justify-between gap-10 h-full relative'>
+                            <div className='lg:w-1/2 xl:w-3/4 flex flex-col justify-between h-full'>
+                                <div>
+                                    <h3 className='mb-4 text-white text-xl xl:text-2xl font-bold'>
+                                        {'دوره آموزشی برنامه نویسی بکند با محوریت زبان پایتون'}
+                                    </h3>
+                                    <span className='text-base text-white leading-6 block mb-3'>
+                                        {'انجمن علمی کامپیوتر دانشگاه بوعلی سینا با همکاری انجمن علمی مهندسی کامپیوتر دانشگاه بین‌المللی امام‌خمینی برگزار می‌کند:'}
+                                    </span>
+                                    <span className='text-base text-white leading-6 block'>
+                                        {'این دوره آموزش برای افرادی مناسب است که می‌خواهند وارد دنیای توسعه وب شوند. اگر به دنبال ارتقاء مهارت‌های خود در زمینه توسعه وب هستید، این دوره بهترین انتخاب برای شماست.'}
+                                    </span>
+                                </div>
+                                <div className='flex justify-start items-end pt-6'>
+                                    <Link to={''}>
+                                        <div className='py-3 px-12 border border-green-dark flex items-center justify-center max-w-[160px] max-h-[50px] rounded-2xl'>
+                                            <span className='text-xl text-green-dark'>بیشتر</span>
+                                        </div>
+                                    </Link>
+                                </div>
+                            </div>
+
+                            <div className='lg:w-1/2 2xl:w-1/4 h-full'>
+                                <img src='./assets/images/banner.png' alt='' className='w-full h-full' />
+                            </div>
+                        </div>
+                        <div className='p-6 bg-purple-main rounded-[22px] flex items-start justify-between gap-10 h-full relative'>
+                            <div className='lg:w-1/2 xl:w-3/4 flex flex-col justify-between h-full'>
+                                <div>
+                                    <h3 className='mb-4 text-white text-xl xl:text-2xl font-bold'>
+                                        {'دوره آموزشی برنامه نویسی بکند با محوریت زبان پایتون'}
+                                    </h3>
+                                    <span className='text-base text-white leading-6 block mb-3'>
+                                        {'انجمن علمی کامپیوتر دانشگاه بوعلی سینا با همکاری انجمن علمی مهندسی کامپیوتر دانشگاه بین‌المللی امام‌خمینی برگزار می‌کند:'}
+                                    </span>
+                                    <span className='text-base text-white leading-6 block'>
+                                        {'این دوره آموزش برای افرادی مناسب است که می‌خواهند وارد دنیای توسعه وب شوند. اگر به دنبال ارتقاء مهارت‌های خود در زمینه توسعه وب هستید، این دوره بهترین انتخاب برای شماست.'}
+                                    </span>
+                                </div>
+                                <div className='flex justify-start items-end pt-6'>
+                                    <Link to={''}>
+                                        <div className='py-3 px-12 border border-green-dark flex items-center justify-center max-w-[160px] max-h-[50px] rounded-2xl'>
+                                            <span className='text-xl text-green-dark'>بیشتر</span>
+                                        </div>
+                                    </Link>
+                                </div>
+                            </div>
+
+                            <div className='lg:w-1/2 2xl:w-1/4 h-full'>
+                                <img src='./assets/images/banner.png' alt='' className='w-full h-full' />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </div>
     )

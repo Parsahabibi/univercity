@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        yekan: ['YekanBakh'],
+      },
       colors: {
         blue: {
           light: '#60A5FA',
